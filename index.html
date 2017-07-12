@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Neighborhood Map - Full Stack NanoDegree Project</title>
 
-        <link rel="shortcut icon" type="imagex-icon" href="./static/crow.ico" />
-        <!-- css links -->
-        <link rel="stylesheet" href="./static/dist/global.min.css">
-        <!-- js scripts -->
-        <script>
-            // Picture element HTML5 shiv
-            document.createElement( "picture" );
-        </script>
-        <script src="./static/dist/global.min.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map - Full Stack NanoDegree Project</title>
 
-    </body>
+    <link rel="shortcut icon" type="imagex-icon" href="./static/crow.ico" />
+    <!-- css links -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/dist/global.min.css">
+    <!-- js scripts -->
+    <script>
+        // Picture element HTML5 shiv
+        document.createElement("picture");
+    </script>
+    <script src="./static/dist/global.min.js"></script>
+</head>
+
+<body>
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand" id="logo">
+                    <picture>
+                        <source srcset="./static/dist/imgs/crow_logo_white-sm.png" media="(min-width: 768px)">
+                        <source srcset="./static/dist/imgs/crow_logo_white-xs.png" media="(max-width: 767px)">
+                        <img src="./static/dist/imgs/crow_logo_white-sm.png" alt="Logo of a crow that says: Armaaar Creations" title="Logo of a crow that says: Armaaar Creations">
+                    </picture>
+                </li>
+                <li class="input-group" id="search">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <a href="javascript:void(0)" class="btn btn-default ">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">A Place</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div class="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="javascript:void(0)" id="sidebar-toggle">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end page-wrapper -->
+    </div>
+    <!-- end wrapper -->
+</body>
+
 </html>

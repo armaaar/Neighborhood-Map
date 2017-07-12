@@ -2,3 +2,39 @@ body
 {
     height: 100vh;
 }
+
+.page-content-wrapper
+{
+    .container-fluid
+    {
+        position: relative;
+    }
+}
+
+#sidebar-toggle
+{
+    position: absolute;
+    top: 20px;
+    left: 25px;
+
+    i.fa
+    {
+        font-size: 24px;
+        color: #fff;
+        text-shadow: 0px 0px 4px #000;
+    }
+}
+
+#logo
+{
+    text-indent: 0;
+    img
+    {
+        width: 80%;
+        margin: 0 15% 0 5%;
+    }
+}
+#search
+{
+    text-indent: 0;
+}
