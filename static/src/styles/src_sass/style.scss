@@ -1,47 +1,39 @@
-body
-{
+body {
     height: 100vh;
 }
 
-.page-content-wrapper
-{
-    .container-fluid
-    {
+.page-content-wrapper {
+    .container-fluid {
         position: relative;
     }
 }
 
-#sidebar-toggle
-{
+#sidebar-toggle {
     position: absolute;
     top: 50px;
     left: 20px;
     z-index: 10;
 
-    i.fa
-    {
+    i.fa {
         font-size: 24px;
         color: #fff;
-        text-shadow: 0px 0px 4px #000;
+        text-shadow: 0 0 4px #000;
     }
 }
 
-#logo
-{
+#logo {
     text-indent: 0;
-    img
-    {
+
+    img {
         width: 80%;
         margin: 0 15% 0 5%;
     }
 }
-#search
-{
+
+#search {
     text-indent: 0;
 }
-
 // Map
-#map
-{
+#map {
     height: 100vh;
 }

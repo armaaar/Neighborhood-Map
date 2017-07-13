@@ -6,6 +6,7 @@ var infoWindowTemplate = "\
 <hr /> \
 <h6>Related Wikipedia articles:</h6> \
 <div>{wikipedia}</div>";
+
 function initMap() {
     // Constructor creates a new map - only center and zoom are required.
     map = new google.maps.Map(document.getElementById('map'), {
@@ -65,17 +66,16 @@ function showInfoWindow(marker) {
         });
         // Bounce once when clicked
         marker.setAnimation(google.maps.Animation.BOUNCE);
-        setTimeout(function(){
+        setTimeout(function() {
             marker.setAnimation(null);
         }, 750);
     }
 }
 
-function setWikiInfoWindow(marker)
-{
+function setWikiInfoWindow(marker) {
     // Async Search wikipedia to get results of the place
     var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + marker.title + '&format=json&callback=wikiCallback';
-    var wikiRequestTimeout = setTimeout(function(){
+    var wikiRequestTimeout = setTimeout(function() {
         setInfoWindowTemplate(marker.title, "Failed to get resources. Request timed out.");
     }, 8000);
     //
@@ -83,13 +83,12 @@ function setWikiInfoWindow(marker)
         url: wikiUrl,
         dataType: "jsonp",
         jsonp: "callback",
-        success: function( response ) {
+        success: function(response) {
             clearTimeout(wikiRequestTimeout);
 
             var articleList = response[1];
             var htmlList;
-            if(articleList.length >1)
-            {
+            if (articleList.length > 1) {
                 htmlList = "<ul>";
                 for (var i = 0; i < articleList.length; i++) {
                     articleStr = articleList[i];
@@ -106,8 +105,7 @@ function setWikiInfoWindow(marker)
     });
 }
 
-function setInfoWindowTemplate(title, wikipedia)
-{
+function setInfoWindowTemplate(title, wikipedia) {
     var infoWindowContent = infoWindowTemplate;
     infoWindowContent = infoWindowContent.replace('{title}', title);
     infoWindowContent = infoWindowContent.replace('{wikipedia}', wikipedia);
