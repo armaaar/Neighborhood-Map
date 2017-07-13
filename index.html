@@ -29,7 +29,9 @@
                     <picture>
                         <source srcset="./static/dist/imgs/crow_logo_white-sm.png" media="(min-width: 768px)">
                         <source srcset="./static/dist/imgs/crow_logo_white-xs.png" media="(max-width: 767px)">
-                        <img src="./static/dist/imgs/crow_logo_white-sm.png" alt="Logo of a crow that says: Armaaar Creations" title="Logo of a crow that says: Armaaar Creations">
+                        <img src="./static/dist/imgs/crow_logo_white-sm.png"
+                                alt="Logo of a crow that says: Armaaar Creations"
+                                title="Logo of a crow that says: Armaaar Creations">
                     </picture>
                 </li>
                 <li class="input-group" id="search">
@@ -40,8 +42,10 @@
                         </a>
                     </div>
                 </li>
+            </ul>
+            <ul class="sidebar-nav" data-bind="foreach: places">
                 <li>
-                    <a href="#">A Place</a>
+                    <a href="javascript:void(0)" data-bind="text: title"></a>
                 </li>
             </ul>
         </div>
