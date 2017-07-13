@@ -11,6 +11,7 @@ function initMap() {
     // Constructor creates a new map - only center and zoom are required.
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
+        mapTypeControl: false
     });
     infoWindow = new google.maps.InfoWindow();
     refreshMarkers();
