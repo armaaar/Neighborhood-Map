@@ -6,8 +6,9 @@ body {
 
 #sidebar-toggle {
   position: absolute;
-  top: 20px;
-  left: 25px; }
+  top: 50px;
+  left: 20px;
+  z-index: 10; }
   #sidebar-toggle i.fa {
     font-size: 24px;
     color: #fff;
@@ -21,3 +22,6 @@ body {
 
 #search {
   text-indent: 0; }
+
+#map {
+  height: 100vh; }
