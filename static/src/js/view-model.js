@@ -8,10 +8,10 @@ function ViewModel() {
     self.shownPlaces = ko.observableArray(shownPlaces);
 
     this.filterPlaces = ko.pureComputed({
-        read: function () {
+        read: function() {
             return "";
         },
-        write: function (value) {
+        write: function(value) {
             // get search string
             var search = value.toLowerCase();
             // Searching for the place

@@ -53,8 +53,7 @@ function removeMarkers() {
     }
 }
 
-function refreshMarkersVisibility()
-{
+function refreshMarkersVisibility() {
     // close infowindow
     infoWindow.close();
     infoWindow.marker = null;
@@ -63,9 +62,8 @@ function refreshMarkersVisibility()
     // set markers visibility
     for (var i = 0; i < shownPlaces.length; i++) {
         markers[i].setVisible(Boolean(shownPlaces[i].isVisible()));
-        if(markers[i].getVisible())
-        {
-            bounds.extend( markers[i].getPosition());
+        if (markers[i].getVisible()) {
+            bounds.extend(markers[i].getPosition());
         }
         // Bounce
         markers[i].setAnimation(google.maps.Animation.BOUNCE);

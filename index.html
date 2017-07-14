@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neighborhood Map - Full Stack NanoDegree Project</title>
 
-    <link rel="shortcut icon" type="imagex-icon" href="./static/crow.ico" />
+    <link rel="shortcut icon" type="imagex-icon" href="./static/crow.ico">
     <!-- css links -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/dist/global.min.css">
@@ -25,15 +25,13 @@
                 </li>
                 <li class="input-group" id="search">
                     <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    <input id="search" data-bind="textInput: filterPlaces"
-                            type="text" class="form-control" placeholder="Search">
+                    <input id="search" data-bind="textInput: filterPlaces" type="text" class="form-control" placeholder="Search">
                 </li>
             </ul>
             <!-- Available Places -->
             <ul class="sidebar-nav" data-bind="foreach: shownPlaces">
                 <li data-bind="visible: isVisible">
-                    <a href="javascript:void(0)"
-                        data-bind="text: title,
+                    <a href="javascript:void(0)" data-bind="text: title,
                             click: $parent.showInfo">
                     </a>
                 </li>
@@ -59,8 +57,7 @@
 
     <!-- js scripts -->
     <script src="./static/dist/global.min.js"></script>
-    <script defer async onerror="alert('Map could not be loaded. Please refresh the page or check your internet connection.')"
-        src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBTuuVQJpSapovC0alJNf8WrW6gcrVUIbs&v=3&callback=initMap"></script>
+    <script defer async onerror="alert('Map could not be loaded. Please refresh the page or check your internet connection.')" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBTuuVQJpSapovC0alJNf8WrW6gcrVUIbs&v=3&callback=initMap"></script>
 </body>
 
 </html>
