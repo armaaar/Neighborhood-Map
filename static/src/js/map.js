@@ -79,9 +79,6 @@ function refreshMarkersVisibility()
     }, 750);
     // Adjust map bounds
     map.fitBounds(bounds);
-    google.maps.event.addDomListener(window, 'resize', function() {
-        map.fitBounds(bounds);
-    });
 }
 
 function showInfoWindow(marker) {

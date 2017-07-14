@@ -59,7 +59,8 @@
 
     <!-- js scripts -->
     <script src="./static/dist/global.min.js"></script>
-    <script defer async src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBTuuVQJpSapovC0alJNf8WrW6gcrVUIbs&v=3&callback=initMap"></script>
+    <script defer async onerror="alert('Map could not be loaded. Please refresh the page.')"
+        src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBTuuVQJpSapovC0alJNf8WrW6gcrVUIbs&v=3&callback=initMap"></script>
 </body>
 
 </html>
