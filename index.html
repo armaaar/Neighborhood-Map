@@ -18,24 +18,15 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <aside id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand" id="logo">
-                    <picture>
-                        <source srcset="./static/dist/imgs/crow_logo_white-sm.png" media="(min-width: 768px)">
-                        <source srcset="./static/dist/imgs/crow_logo_white-xs.png" media="(max-width: 767px)">
-                        <img src="./static/dist/imgs/crow_logo_white-sm.png" alt="Logo of a crow that says: Armaaar Creations" title="Logo of a crow that says: Armaaar Creations">
-                    </picture>
+                    <img src="./static/dist/imgs/crow_logo_white-sm.png" alt="Logo of a crow that says: Armaaar Creations" title="Logo of a crow that says: Armaaar Creations">
                 </li>
                 <li class="input-group" id="search">
-                    <input id="search" type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-btn">
-                        <a href="javascript:void(0)" id="search-btn"
-                                class="btn btn-default"
-                                data-bind="click: filterPlaces">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <input id="search" data-bind="textInput: filterPlaces"
+                            type="text" class="form-control" placeholder="Search">
                 </li>
             </ul>
             <!-- Available Places -->
@@ -47,10 +38,10 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </aside>
 
         <!-- Page content -->
-        <div class="page-content-wrapper">
+        <main class="page-content-wrapper">
             <div class="container-fluid">
                 <a href="javascript:void(0)" id="sidebar-toggle">
                     <i class="fa fa-bars"></i>
@@ -61,17 +52,14 @@
 
             </div>
             <!-- end container -->
-        </div>
+        </main>
         <!-- end page-wrapper -->
     </div>
     <!-- end wrapper -->
 
     <!-- js scripts -->
-    <script>
-        // Picture element HTML5 shiv
-        document.createElement("picture");
-    </script>
     <script src="./static/dist/global.min.js"></script>
+    <script defer async src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBTuuVQJpSapovC0alJNf8WrW6gcrVUIbs&v=3&callback=initMap"></script>
 </body>
 
 </html>

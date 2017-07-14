@@ -42,6 +42,9 @@ function refreshMarkers() {
         bounds.extend(marker.position);
     }
     map.fitBounds(bounds);
+    google.maps.event.addDomListener(window, 'resize', function() {
+        map.fitBounds(bounds);
+    });
 }
 // This function will loop through the listings and hide them all.
 function hideMarkers() {
@@ -76,17 +79,12 @@ function showInfoWindow(marker) {
 function setWikiInfoWindow(marker) {
     // Async Search wikipedia to get results of the place
     var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + marker.title + '&format=json&callback=wikiCallback';
-    var wikiRequestTimeout = setTimeout(function() {
-        setInfoWindowTemplate(marker.title, "Failed to get resources. Request timed out.");
-    }, 8000);
-    //
+
     $.ajax({
         url: wikiUrl,
         dataType: "jsonp",
         jsonp: "callback",
         success: function(response) {
-            clearTimeout(wikiRequestTimeout);
-
             var articleList = response[1];
             var htmlList;
             if (articleList.length > 1) {
@@ -102,6 +100,9 @@ function setWikiInfoWindow(marker) {
             }
 
             setInfoWindowTemplate(marker.title, htmlList);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            setInfoWindowTemplate(marker.title, "Failed to get resources.");
         }
     });
 }
@@ -112,10 +113,3 @@ function setInfoWindowTemplate(title, wikipedia) {
     infoWindowContent = infoWindowContent.replace('{wikipedia}', wikipedia);
     infoWindow.setContent(infoWindowContent);
 }
-
-
-// Load gmaps
-$.getScript("http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBTuuVQJpSapovC0alJNf8WrW6gcrVUIbs&v=3&callback=initMap")
-    .fail(function(jqxhr, settings, exception) {
-        alert("Couldn't load the map. Please reload the page.")
-    })
