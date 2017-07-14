@@ -57,5 +57,3 @@ var places = [{
         }
     }
 ];
-
-var shownPlaces = places;

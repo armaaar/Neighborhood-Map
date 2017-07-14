@@ -31,7 +31,7 @@
             </ul>
             <!-- Available Places -->
             <ul class="sidebar-nav" data-bind="foreach: shownPlaces">
-                <li>
+                <li data-bind="visible: isVisible">
                     <a href="javascript:void(0)"
                         data-bind="text: title,
                             click: $parent.showInfo">

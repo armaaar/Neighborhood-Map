@@ -1,3 +1,7 @@
+var shownPlaces = places;
+for (var i = 0; i < shownPlaces.length; i++) {
+    shownPlaces[i].isVisible = ko.observable(true);
+}
 // viewModel
 function ViewModel() {
     var self = this;
@@ -10,17 +14,18 @@ function ViewModel() {
         write: function (value) {
             // get search string
             var search = value.toLowerCase();
-            // clear shownPlaces object
-            shownPlaces = [];
             // Searching for the place
-            for (var i = 0; i < places.length; i++) {
+            for (var i = 0; i < shownPlaces.length; i++) {
                 if (places[i].title.toLowerCase().indexOf(search) != -1) {
-                    shownPlaces.push(places[i]);
+                    shownPlaces[i].isVisible(true);
+                    self.shownPlaces()[i].isVisible(true);
+                } else {
+                    shownPlaces[i].isVisible(false);
+                    self.shownPlaces()[i].isVisible(false);
                 }
             }
-            // update observable
-            self.shownPlaces(shownPlaces);
-            refreshMarkers();
+            // update markers
+            refreshMarkersVisibility();
         },
         owner: this
     });

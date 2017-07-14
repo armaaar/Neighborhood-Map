@@ -18,7 +18,7 @@ function initMap() {
 }
 
 function refreshMarkers() {
-    hideMarkers();
+    removeMarkers();
 
     var bounds = new google.maps.LatLngBounds();
 
@@ -47,10 +47,41 @@ function refreshMarkers() {
     });
 }
 // This function will loop through the listings and hide them all.
-function hideMarkers() {
+function removeMarkers() {
     for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(null);
     }
+}
+
+function refreshMarkersVisibility()
+{
+    // close infowindow
+    infoWindow.close();
+    infoWindow.marker = null;
+    // get bounds to readjust
+    var bounds = new google.maps.LatLngBounds();
+    // set markers visibility
+    for (var i = 0; i < shownPlaces.length; i++) {
+        markers[i].setVisible(Boolean(shownPlaces[i].isVisible()));
+        if(markers[i].getVisible())
+        {
+            bounds.extend( markers[i].getPosition());
+        }
+        // Bounce
+        markers[i].setAnimation(google.maps.Animation.BOUNCE);
+    }
+
+    // stop bouncing
+    setTimeout(function() {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setAnimation(null);
+        }
+    }, 750);
+    // Adjust map bounds
+    map.fitBounds(bounds);
+    google.maps.event.addDomListener(window, 'resize', function() {
+        map.fitBounds(bounds);
+    });
 }
 
 function showInfoWindow(marker) {
